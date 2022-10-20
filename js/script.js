@@ -16,6 +16,12 @@
 // FATTO
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
+// FATTO
+
+// BONUS 1:
+// Trasformare la stringa foto in una immagine effettiva
+// BONUS 2:
+// Organizzare i singoli membri in card/schede. Se non vi sentite particolarmente creativi, potete prendere uno spunto dallo screenshot allegato.
 
 
 const person1 = {
@@ -54,7 +60,7 @@ const person6 = {
     photo: "barbara-ramos-graphic-designer.jpg"
 };
 
-const list = document.getElementById("list");
+const cardsCollector = document.getElementById("cards-collector");
 
 const arrayTeam = [
     person1,
@@ -65,11 +71,13 @@ const arrayTeam = [
     person6
 ];
 
+
 for(let i = 0; i < arrayTeam.length; i++) {
-    let person = arrayTeam[i];
-    for(let key in person) {
-        const personAttribute = document.createElement("li");
-        personAttribute.innerHTML += person[key];
-        list.append(personAttribute);
-    }
+    const card = document.createElement("div");
+    card.classList.add("card");
+    const person = arrayTeam[i];
+    console.log(person);
+    console.log("foto", person.photo);
+    card.innerHTML = `<div class="mb-1"><img src="img/${person.photo}"></div> <div class="text-center bg-white"><p>${person.name}</p><p>${person.role}</p></div>`;
+    cardsCollector.append(card);
 }
