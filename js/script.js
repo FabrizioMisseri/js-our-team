@@ -13,6 +13,7 @@
 // FATTO
 // MILESTONE 1:
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto
+// FATTO
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
 
@@ -53,6 +54,8 @@ const person6 = {
     photo: "barbara-ramos-graphic-designer.jpg"
 };
 
+const list = document.getElementById("list");
+
 const arrayTeam = [
     person1,
     person2,
@@ -65,6 +68,8 @@ const arrayTeam = [
 for(let i = 0; i < arrayTeam.length; i++) {
     let person = arrayTeam[i];
     for(let key in person) {
-        console.log(person[key]);
+        const personAttribute = document.createElement("li");
+        personAttribute.innerHTML += person[key];
+        list.append(personAttribute);
     }
 }
