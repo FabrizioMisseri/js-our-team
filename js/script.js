@@ -76,8 +76,6 @@ for(let i = 0; i < arrayTeam.length; i++) {
     const card = document.createElement("div");
     card.classList.add("card");
     const person = arrayTeam[i];
-    console.log(person);
-    console.log("foto", person.photo);
     card.innerHTML = `<div class="mb-1"><img src="img/${person.photo}"></div> <div class="text-center"><p>${person.name}</p><p>${person.role}</p></div>`;
     cardsCollector.append(card);
 }
