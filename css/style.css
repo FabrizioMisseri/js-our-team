@@ -10,6 +10,10 @@ html{
     font-size: 100%;
 }
 
+img{
+    max-height: 20vh;
+}
+
 
 /* COMMON */
 
@@ -23,27 +27,29 @@ html{
 }
 
 .container{
-    width: 80%;
+    width: 50%;
     height: 90vh;
-    /* debug */
-    border: 1px solid black;
 }
 
-header, main{
-    padding: 1.5rem;
+header{
+    height: 10%;
 }
 
 /* MAIN */
 #cards-collector{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
 }
 
 .card{
-    width: calc(80% / 3);
-    height: calc(90% / 3);
-    margin: 2rem 0;
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
 }
 
 
@@ -55,8 +61,4 @@ header, main{
 
 .text-center{
     text-align: center;
-}
-
-.bg-white{
-    background-color: white;
 }
